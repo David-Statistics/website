@@ -1,0 +1,33 @@
++++
+# About/Biography widget.
+widget = "about"
+active = true
+date = "2016-04-20T00:00:00"
+
+# Order that this section will appear in.
+weight = 5
+
+# List your academic interests.
+[interests]
+  interests = [
+    "Bayesian Hiearchical Modeling",
+    "Spatio-temporal Statistics",
+    "Statistical Consulting"
+  ]
+
+# List your qualifications (such as academic degrees).
+[[education.courses]]
+  course = "BS in Statistical Science"
+  institution = "Duke University"
+  year = 2016
+
+[[education.courses]]
+  course = "AB in Mathematics"
+  institution = "Duke University"
+  year = 2016
+ 
++++
+
+# Biography
+
+I am currently a graduate student at Colorado State University in the Department of Statistics. My recent work has dealt with analog forecasting of snow water equivalent in mountainous regions. However, I am broadly interested in Bayesian spatio-temporal statistics with applications to the environment and ecology. 

@@ -1,0 +1,68 @@
+---
+title: "Getting Started with R and RStudio"
+author: David Clancy
+date: "2018-03-08"
+slug: "gettingstartedr"
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+
+
+<div id="what-is-r" class="section level2">
+<h2>What is R?</h2>
+<p>R is an open source statistical programming language. It is completely free to use, offers very powerful functionality, and the ability to code in R can be a very valuable skill on your resume and in many jobs.</p>
+</div>
+<div id="how-to-download-r-and-rstudio" class="section level2">
+<h2>How to Download R and RStudio</h2>
+<p>Your computer may actually come with R installed, but just to ensure it’s up to date, go ahead and go through the process anyway. As of writing this (2/22/2018), the most recent version is 3.4.3 “Kite-Eating Tree.” The process for getting installing R is quite simple, go to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a> and select “Download for [your operating system]” (on Windows you’ll want base). Once that is installed, go to <a href="https://www.rstudio.com/products/rstudio/#Desktop" class="uri">https://www.rstudio.com/products/rstudio/#Desktop</a> and download and install the open source (free) version of RStudio desktop.</p>
+</div>
+<div id="using-rstudio" class="section level2">
+<h2>Using RStudio</h2>
+<p>RStudio is an integrated development environment (IDE) for the R language. You should see either 3 or 4 panels when you open RStudio for the first time. If you see only 3 panels (1 on the left and 2 on the right) go ahead and click the blank page icon in the upper left corner and select ‘R script’ to get the 4th panel. The upper left panel is both your data viewer as well as your text editor. It will be where you do the vast majority of your typing. The lower left panel is the console and it is where code is actually run. You can run code line by line directly from the console or you can highlight text in the upper left panel and run the highlighted code by pressing command-enter on Macs or control-enter on Windows. The upper right panel has several different options but is usually going to show your current environment - that is, a list of objects which you have created - it should be empty upon opening RStudio for the first time. The lower right panel again has several options but will usually used as either a file navigator or as a a plot viewer.</p>
+</div>
+<div id="using-r" class="section level2">
+<h2>Using R</h2>
+<p>Throughout these exercises, I’ll include R code that you should try running. Let’s get started by using R as a simple calculator. Try typing the following into an R script, then highlighting it and running it (control or command enter):</p>
+<pre class="r"><code>2 + 2</code></pre>
+<p>You should see</p>
+<pre><code>## [1] 4</code></pre>
+<p>in your console.</p>
+<p>The basic math operators <code>+,-,*,/</code> all work as you think they should in R. R also knows the order of operations so we get the correct result for the following,</p>
+<pre class="r"><code>3 + 2 * 4</code></pre>
+<pre><code>## [1] 11</code></pre>
+<p>As you’re just getting used to R, use the examples as a guideline for the types of things you can do. I would expect you to play around with R more than simply copying and pasting the exact expressions I give you - especially if you’ve never worked with a programming language before.</p>
+<div id="variables-and-assignment" class="section level3">
+<h3>Variables and Assignment</h3>
+<p>If we were to only use R as a calculator it would be like owning and using a car for the sole purpose of driving to our next door neighbor’s house. Many times we want to store results so that we can use them at a later point without having to do the calculation over again. We do that by using <code>&lt;-</code> or <code>=</code> (for these exercises, I will generally use the former) in between the name we want to give to the result and the expression which gives us the result. For instance,</p>
+<pre class="r"><code>x &lt;- 2 + 2 * 2</code></pre>
+<p>Now, we can call <code>x</code> or do further operations with <code>x</code>,</p>
+<pre class="r"><code>x</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre class="r"><code>x * 2</code></pre>
+<pre><code>## [1] 12</code></pre>
+<p>Most of the variables we’ll be working with at first will be numeric variables or vectors (next section), however there are more variable types which will come up later (such as strings and factors). For instance,</p>
+<pre class="r"><code>x &lt;- &quot;Hello World&quot;
+
+x</code></pre>
+<pre><code>## [1] &quot;Hello World&quot;</code></pre>
+</div>
+<div id="vectors" class="section level3">
+<h3>Vectors</h3>
+<p>A vector in R is one of the most common data stuctures that we’ll work with. Simply put, a vector is merely an ordered collection of values which are all of the same type. We make a vector by using the <code>c()</code> function. For instance, if we want to make a vector of the integers between 1 and 5 and give it the name <code>ints</code> we would run</p>
+<pre class="r"><code>ints &lt;- c(1, 2, 3, 4, 5)</code></pre>
+<p>Now when we call this object, this is what happens,</p>
+<pre class="r"><code>ints</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<p>Again, most vectors we work with will be numeric variables but this doesn’t have to be the case. For example,</p>
+<pre class="r"><code>ABCs = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, &quot;m&quot;, 
+         &quot;n&quot;, &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;, &quot;u&quot;, &quot;v&quot;, &quot;w&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;)
+
+ABCs</code></pre>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
+## [18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+</div>
+<div id="operations" class="section level3">
+<h3>Operations</h3>
+</div>
+</div>
