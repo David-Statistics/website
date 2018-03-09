@@ -19,9 +19,11 @@ R is an open source statistical programming language. It is completely free to u
 
 Your computer may actually come with R installed, but just to ensure it's up to date, go ahead and go through the process anyway. As of writing this (2/22/2018), the most recent version is 3.4.3 "Kite-Eating Tree." The process for getting installing R is quite simple, go to https://cloud.r-project.org/ and select "Download for [your operating system]" (on Windows you'll want base). Once that is installed, go to https://www.rstudio.com/products/rstudio/#Desktop and download and install the open source (free) version of RStudio desktop.
 
+*Note this post in particular doesn't ask you to do much - you should spend some time just exploring the RStudio IDE - don't just do the same things that are shown below.*
+
 ## Using RStudio
 
-RStudio is an integrated development environment (IDE) for the R language. You should see either 3 or 4 panels when you open RStudio for the first time. If you see only 3 panels (1 on the left and 2 on the right) go ahead and click the blank page icon in the upper left corner and select 'R script' to get the 4th panel. The upper left panel is both your data viewer as well as your text editor. It will be where you do the vast majority of your typing. The lower left panel is the console and it is where code is actually run. You can run code line by line directly from the console or you can highlight text in the upper left panel and run the highlighted code by pressing command-enter on Macs or control-enter on Windows. The upper right panel has several different options but is usually going to show your current environment - that is, a list of objects which you have created - it should be empty upon opening RStudio for the first time. The lower right panel again has several options but will usually used as either a file navigator or as a a plot viewer. 
+RStudio is an integrated development environment (IDE) for the R language. You should see either 3 or 4 panels when you open RStudio for the first time. If you see only 3 panels (1 on the left and 2 on the right) go ahead and click the blank page icon in the upper left corner and select 'R script' to get the 4th panel. The upper left panel is both your data viewer as well as your text editor. It will be where you do the vast majority of your typing. The lower left panel is the console and it is where code is actually run. You can run code line by line directly from the console or you can highlight text in the upper left panel and run the highlighted code by pressing command-enter on Macs or control-enter on Windows (it's recommended that you get used to the latter so that your code is saved and reproducible). The upper right panel has several different options but is usually going to show your current environment - that is, a list of objects which you have created - it should be empty upon opening RStudio for the first time. The lower right panel again has several options but will usually used as either a file navigator or as a a plot viewer. 
 
 ## Using R
 
@@ -94,3 +96,27 @@ ABCs
 ```
 
 ### Operations
+
+Most operations in R are what we call vectorized. That means that the operation that you're trying to do will be applied to each element of a vector and if it's an operation across two vectors, it will be applied element-wise. It's generally easier to see what this means through example though:
+
+```{r}
+x = c(0, 1, 2)
+y = c(3, 4, 5)
+2 * x
+y + 2
+x + y
+x * y
+exp(x)
+log(y)
+```
+
+### Help pages
+
+Not sure exactly what the `exp` function above actually does? Not sure what base `log` uses? Type the following into the console,
+
+```r
+?exp
+?log
+```
+
+
