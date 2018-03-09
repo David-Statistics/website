@@ -9,4 +9,52 @@ tags: []
 
 
 
-<p>This will be my post on summarizing data with a data frame</p>
+<div id="income" class="section level2">
+<h2>Income</h2>
+<p>The data set we’ll use to get familiar with summarizing data is a subset of the 1994 Census database. I’d encourage you to make a new Rscript (top left blank page with a + on it) and start by copying the following line which will grab the data from the UCI Machine Learning Repository.</p>
+<pre class="r"><code>income &lt;- read.csv(&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data&quot;, header = FALSE, stringsAsFactors = TRUE, 
+                   col.names = c(&quot;age&quot;, &quot;workclass&quot;, &quot;samp.weight&quot;, &quot;edu&quot;, &quot;edu.num&quot;, &quot;marital&quot;, &quot;occ&quot;, &quot;relationship&quot;,
+                                 &quot;race&quot;, &quot;sex&quot;, &quot;cap.gain&quot;, &quot;cap.loss&quot;, &quot;hrwk&quot;, &quot;native&quot;, &quot;income&quot;), na.strings = c(&quot; ?&quot;))</code></pre>
+<p>If you want to take a peek at the data you can click on it in the environment (top right) pane after running that line of code. In general, a useful function in R is <code>str</code>. It’s short for structure and as you might imagine shows us quite a bit of useful information about an object in a relatively small amount of output.</p>
+<pre class="r"><code>str(income)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    32561 obs. of  15 variables:
+##  $ age         : int  39 50 38 53 28 37 49 52 31 42 ...
+##  $ workclass   : Factor w/ 8 levels &quot; Federal-gov&quot;,..: 7 6 4 4 4 4 4 6 4 4 ...
+##  $ samp.weight : int  77516 83311 215646 234721 338409 284582 160187 209642 45781 159449 ...
+##  $ edu         : Factor w/ 16 levels &quot; 10th&quot;,&quot; 11th&quot;,..: 10 10 12 2 10 13 7 12 13 10 ...
+##  $ edu.num     : int  13 13 9 7 13 14 5 9 14 13 ...
+##  $ marital     : Factor w/ 7 levels &quot; Divorced&quot;,&quot; Married-AF-spouse&quot;,..: 5 3 1 3 3 3 4 3 5 3 ...
+##  $ occ         : Factor w/ 14 levels &quot; Adm-clerical&quot;,..: 1 4 6 6 10 4 8 4 10 4 ...
+##  $ relationship: Factor w/ 6 levels &quot; Husband&quot;,&quot; Not-in-family&quot;,..: 2 1 2 1 6 6 2 1 2 1 ...
+##  $ race        : Factor w/ 5 levels &quot; Amer-Indian-Eskimo&quot;,..: 5 5 5 3 3 5 3 5 5 5 ...
+##  $ sex         : Factor w/ 2 levels &quot; Female&quot;,&quot; Male&quot;: 2 2 2 2 1 1 1 2 1 2 ...
+##  $ cap.gain    : int  2174 0 0 0 0 0 0 0 14084 5178 ...
+##  $ cap.loss    : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ hrwk        : int  40 13 40 40 40 40 16 45 50 40 ...
+##  $ native      : Factor w/ 41 levels &quot; Cambodia&quot;,&quot; Canada&quot;,..: 39 39 39 39 5 39 23 39 39 39 ...
+##  $ income      : Factor w/ 2 levels &quot; &lt;=50K&quot;,&quot; &gt;50K&quot;: 1 1 1 1 1 1 1 2 2 2 ...</code></pre>
+<p>Here we can see that the <code>income</code> object is a <code>data.frame</code>. This is the primary form that data sets will come in for R. In addition though, we can see that we’re working with a data set that has 32561 observations and we have information about 15 variables. In addition, for each of those 15 variables we get the name of that variable after the dollar sign, the type of variable it is (categorical variables are <code>factor</code> types in R and <code>int</code> stands for integer). We also get the first few observations for each variable! In practice, unless you’re working with a data set with a ton of variables, <code>str</code> is probably the best place to start when you first get a data set.</p>
+<p>Another (slightly more crude) approach is to use the <code>head</code> function. This will give you the first few observations of a data set,</p>
+<pre class="r"><code>head(income)</code></pre>
+<pre><code>##   age         workclass samp.weight        edu edu.num             marital
+## 1  39         State-gov       77516  Bachelors      13       Never-married
+## 2  50  Self-emp-not-inc       83311  Bachelors      13  Married-civ-spouse
+## 3  38           Private      215646    HS-grad       9            Divorced
+## 4  53           Private      234721       11th       7  Married-civ-spouse
+## 5  28           Private      338409  Bachelors      13  Married-civ-spouse
+## 6  37           Private      284582    Masters      14  Married-civ-spouse
+##                  occ   relationship   race     sex cap.gain cap.loss hrwk
+## 1       Adm-clerical  Not-in-family  White    Male     2174        0   40
+## 2    Exec-managerial        Husband  White    Male        0        0   13
+## 3  Handlers-cleaners  Not-in-family  White    Male        0        0   40
+## 4  Handlers-cleaners        Husband  Black    Male        0        0   40
+## 5     Prof-specialty           Wife  Black  Female        0        0   40
+## 6    Exec-managerial           Wife  White  Female        0        0   40
+##           native income
+## 1  United-States  &lt;=50K
+## 2  United-States  &lt;=50K
+## 3  United-States  &lt;=50K
+## 4  United-States  &lt;=50K
+## 5           Cuba  &lt;=50K
+## 6  United-States  &lt;=50K</code></pre>
+</div>
