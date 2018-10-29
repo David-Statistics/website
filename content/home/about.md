@@ -1,8 +1,8 @@
 +++
 # About/Biography widget.
 widget = "about"
-active = false
-date = "2016-04-20T00:00:00"
+active = true
+date = "2018-10-29T00:00:00"
 
 # Order that this section will appear in.
 weight = 1
