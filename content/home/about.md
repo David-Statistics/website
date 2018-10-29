@@ -33,6 +33,6 @@ weight = 5
  
 +++
 
-# Biography
+# About Me
 
 I am currently a graduate student at Colorado State University in the Department of Statistics. My recent work has dealt with analog forecasting of snow water equivalent in mountainous regions. I am more broadly interested in Bayesian hierarchical modeling in applications with spatial and/or temporal dependence. 
