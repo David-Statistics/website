@@ -60,8 +60,8 @@ defaultContentLanguageInSubdir = false
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "david.statistics@gmail.com"
-  address = "Wagar 205"
-  office_hours = "Tuesday 9:00 to 11:30 and 14:00-16:00 or email for appointment"
+  address = ""
+  office_hours = ""
   phone = ""
   skype = ""
   telegram = ""
@@ -248,10 +248,10 @@ defaultContentLanguageInSubdir = false
   url = "#about"
   weight = 1
 
-[[menu.main]]
-  name = "Publications"
-  url = "#publications_selected"
-  weight = 2
+#[[menu.main]]
+#  name = "Publications"
+#  url = "#publications_selected"
+#  weight = 2
 
 [[menu.main]]
   name = "Posts"
